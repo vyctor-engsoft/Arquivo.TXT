@@ -1,0 +1,39 @@
+# Criando um arquivo e escrevendo dentro dele
+with open('meu_arquivo.txt', "w") as arquivo:
+    arquivo.write('Ola , Vyctor ! \n')
+    arquivo.write('Esse é o Projeto Código Alfa - fase 3\n')
+
+print('-'*30)
+
+# Lendo conteudo de um arquivo
+with open('meu_arquivo.txt', "r") as arquivo:
+    X = arquivo.read()
+    print(X)
+
+print('-'*30)
+
+# Adicionar conteudo sem apagar o que já tem
+with open('meu_arquivo.txt', 'a') as arquivo:
+    arquivo.write('Nova Linha adicionada ! \n')
+
+print('-'*30)
+
+# Usando listas ou dicionarios (JSON)
+import json
+
+aluno = {
+    'nome': 'Vyctor',
+    'idade': 15,
+    'projeto': 'codigo alfa'
+}
+
+# 1. Salvar em JSON
+with open('aluno.json', 'w') as arquivo:
+    json.dump(aluno, arquivo)
+
+# 2. Ler de volta
+with open('aluno.json', 'r') as arquivo:
+    Y = json.load(arquivo)
+    print(Y)
+
+print('-'*30)
